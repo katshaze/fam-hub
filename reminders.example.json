@@ -1,0 +1,70 @@
+{
+  "children": [
+    {
+      "id": "1",
+      "name": "Child one"
+    },
+    {
+      "id": "2",
+      "name": "Child two"
+    }
+  ],
+  "schedule": {
+    "0": {
+      "1": [
+        "Soccer practice",
+        "Pack homework folder"
+      ],
+      "2": [
+        "Outdoor play gear",
+        "Pack homework folder"
+      ]
+    },
+    "1": {
+      "1": [
+        "Music lesson bag",
+        "Homework folder"
+      ],
+      "2": []
+    },
+    "2": {
+      "1": [
+        "Library bag"
+      ],
+      "2": [
+        "After-school club"
+      ]
+    },
+    "3": {
+      "1": [],
+      "2": [
+        "Sports uniform",
+        "Library bag"
+      ]
+    },
+    "4": {
+      "1": [
+        "Sports uniform",
+        "Soccer gear"
+      ],
+      "2": [
+        "Library bag",
+        "Book for activity"
+      ]
+    },
+    "5": {
+      "1": [
+        "Sports uniform"
+      ],
+      "2": []
+    },
+    "6": {
+      "1": [
+        "Weekend — swim bag optional"
+      ],
+      "2": [
+        "Weekend — bike ride?"
+      ]
+    }
+  }
+}

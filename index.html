@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darley St Home Hub</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="top">
+      <div id="datetime-root" class="left"></div>
+      <div id="weather-root" class="right"></div>
+    </div>
+    <div class="middle">
+      <div id="middle-root" class="content"></div>
+    </div>
+    <div class="bottom">
+      <div class="content">
+        <div>Here are today's reminders</div>
+        <div class="reminders-container" id="reminders-root"></div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="app.js"></script>
+
+</body>
+
+</html>

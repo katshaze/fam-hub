@@ -1,0 +1,249 @@
+/* Reset CSS to remove browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+ * Fill the viewport without page scroll: chain height % on html/body, then 100% on
+ * .container. (100vh alone can still leave 1px scroll in some browsers / DevTools
+ * device frames due to rounding or scrollbar math.)
+ */
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /* max-height: 100%; */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #B0B0B0;
+  font-weight: 300;
+  font-size: 18px;
+  max-width: 100%;
+}
+
+/* Full-viewport shell: padding lives here (border-box) so it’s inside the 100% box. */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  /* overflow-y: auto;
+  overflow-x: hidden; */
+  padding: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  /* Two gaps between three rows — keep modest on short displays (e.g. 480px height). */
+  gap: 16px;
+}
+
+.top,
+.middle,
+.bottom {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.top {
+  flex: 0 0 auto;
+}
+
+.bottom {
+  flex: 1 1 0;
+  min-height: 0;
+}
+
+.bottom {
+  overflow-y: auto;
+}
+
+.middle {
+  flex: 0 1 auto;
+}
+
+.top {
+  align-items: flex-start;
+}
+
+.middle {
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* Bottom section: stretch full width so the reminders row gets a real width cap (align-items: center shrinks-to-fit). */
+.bottom .content {
+  align-items: stretch;
+}
+
+.bottom .content > div:first-child {
+  text-align: center;
+}
+
+.reminders-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.school-reminders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  flex: 1 1 0;
+  min-width: 0;
+  border: 1px solid #B0B0B0;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 20px;
+  color: #fafafa;
+}
+
+.school-reminders-items {
+  font-size: 18px;
+  color: #B0B0B0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  text-align: center;
+}
+
+.reminder-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+}
+.reminder-item {
+  margin-bottom: 8px;
+}
+.reminder-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  color: #B0B0B0;
+}
+.reminder-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: #fafafa; /* optional: tint when checked */
+}
+
+.left,
+.right {
+  display: flex;
+  flex: 1 1 0;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.right {
+  align-items: flex-end;
+}
+
+#datetime-root,
+#weather-root {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.greeting {
+  font-size: 48px;
+  color: #fafafa;
+}
+
+/* .date-line,
+.weather-location {
+  font-size: 18px;
+} */
+
+.larger-text {
+  font-size: 24px;
+}
+
+.weather-location {
+  text-transform: uppercase;
+}
+
+.weather-divider {
+  width: 60%;
+  height: 1px;
+  background-color: #B0B0B0;
+  opacity: 0.5;
+}
+
+.timeContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2px;
+}
+
+.clock-time,
+.clock-seconds {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  align-self: flex-start;
+  font-weight: 300;
+}
+
+.clock-time,
+.weather-temp {
+  color: #fafafa;
+  font-size: 48px;
+}
+
+.clock-seconds {
+  font-size: 24px;
+  margin-top: 4px;
+}
