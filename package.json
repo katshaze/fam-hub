@@ -1,0 +1,28 @@
+{
+  "name": "darley-street",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/tailwind.css --minify",
+    "dev": "concurrently \"tailwindcss -i ./src/input.css -o ./dist/tailwind.css --watch\" \"python3 -m http.server 8000\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katshaze/fam-hub.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/katshaze/fam-hub/issues"
+  },
+  "homepage": "https://github.com/katshaze/fam-hub#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "concurrently": "^9.2.1",
+    "tailwindcss": "^4.3.0"
+  }
+}

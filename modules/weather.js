@@ -1,5 +1,7 @@
+import { WEATHER_API_KEY } from '../config.local.js';
+
 export async function fetchWeather() {
-  const weather = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=-33.83746790022109&lon=151.21235160829795&appid=0bddbf144589d3ef349e5228d96c4f94&units=metric');
+  const weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=-33.83746790022109&lon=151.21235160829795&appid=${WEATHER_API_KEY}&units=metric`);
   const data = await weather.json();
   return data;
 }
@@ -17,11 +19,17 @@ export function renderWeatherHTML(data) {
   const name = typeof data.name === 'string' ? data.name : '';
   const temp = formatTemperature(data.main?.temp);
   const feels = formatTemperature(data.main?.feels_like);
+  const icon = data.weather[0].icon || '01d';
+  const iconUrl = `https://openweathermap.org/img/wn/${icon}.png`;
+  const iconHtml = `<img src="${iconUrl}" alt="Weather icon" class="weather-icon">`;
 
   return `
     <div class="weather-location">${name}</div>
     <div class="weather-divider"></div>
-    <div class="weather-temp">${temp}</div>
+    <div class="flex flex-row items-center gap-2">
+      <div>${iconHtml}</div>
+      <div class="weather-temp">${temp}</div>
+    </div>
     <div class="weather-feels">Feels like ${feels}</div>
   `;
 }
