@@ -24,8 +24,6 @@ export function renderWeatherHTML(data) {
   const iconHtml = `<img src="${iconUrl}" alt="Weather icon" class="weather-icon">`;
 
   return `
-    <div class="weather-location">${name}</div>
-    <div class="weather-divider"></div>
     <div class="flex flex-row items-center gap-2">
       <div>${iconHtml}</div>
       <div class="weather-temp">${temp}</div>

@@ -75,23 +75,28 @@ body {
 .bottom {
   flex: 1 1 0;
   min-height: 0;
-}
-
-.bottom {
   overflow-y: auto;
 }
 
-.middle {
+/* .middle {
   flex: 0 1 auto;
-}
+} */
 
 .top {
   align-items: flex-start;
 }
 
 .middle {
+  flex: 0 1 0;
+  min-width: 0;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+
+  @media (max-width: 480px) {
+    flex: 1 1 0;
+    min-height: 0;
+  }
 }
 
 .content {
@@ -197,28 +202,13 @@ body {
 }
 
 .greeting {
-  font-size: 48px;
+  font-size: clamp(24px, 6vh, 48px);
+  line-height: 1.1;
   color: #fafafa;
 }
 
-/* .date-line,
-.weather-location {
-  font-size: 18px;
-} */
-
 .larger-text {
-  font-size: 24px;
-}
-
-.weather-location {
-  text-transform: uppercase;
-}
-
-.weather-divider {
-  width: 60%;
-  height: 1px;
-  background-color: #B0B0B0;
-  opacity: 0.5;
+  font-size: clamp(16px, 3.5vh, 24px);
 }
 
 .timeContainer {
@@ -240,10 +230,21 @@ body {
 .clock-time,
 .weather-temp {
   color: #fafafa;
-  font-size: 48px;
+  font-size: clamp(32px, 7vh, 48px);
+  line-height: 1;
+}
+
+.weather-icon {
+  width: clamp(32px, 6vh, 48px);
+  height: clamp(32px, 6vh, 48px);
 }
 
 .clock-seconds {
-  font-size: 24px;
+  font-size: clamp(16px, 4vh, 24px);
   margin-top: 4px;
+}
+
+.weather-feels {
+  font-size: clamp(16px, 4vh, 24px);
+  line-height: 1;
 }
