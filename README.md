@@ -27,6 +27,6 @@ Designed for **local network use** (not a public hosted app).
 If you want to change/extend the app, work on it locally then transfer the files to your Pi.
 
 - Do steps 1-4 in Setup section
-- `npm dev` to watch for tailwind changes, build them, and then serve everything
+- `npm rundev` to watch for tailwind changes, build them, and then serve everything
 - Open on `http://localhost:8000`
 
