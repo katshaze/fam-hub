@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/katshaze/fam-hub#readme",
   "devDependencies": {
-    "@tailwindcss/cli": "^4.3.0",
+    "@tailwindcss/cli": "^4.3.3",
     "concurrently": "^9.2.1",
     "tailwindcss": "^4.3.0"
   }
