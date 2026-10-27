@@ -1,3 +1,4 @@
 node_modules/
 .env
 reminders.json
+config.local.js

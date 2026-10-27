@@ -1,7 +1,7 @@
 let remindersData = null;
 
 export async function loadReminders() {
-  const res = await fetch('/reminders.json');
+  const res = await fetch('/reminders.json', { cache: 'no-store' });
   if (!res.ok) throw new Error('Missing reminders.json — copy reminders.example.json');
   remindersData = await res.json();
 }
@@ -31,6 +31,23 @@ export function getSchoolReminders(day, child) {
 export function getSchoolRemindersForToday(child) {
   const today = new Date().getDay();
   return getSchoolReminders(today, child);
+}
+
+export function startRemindersAutoRefresh() {
+  let lastDay = new Date().getDay();
+
+  setInterval(async () => {
+    const today = new Date().getDay();
+    if (today === lastDay) return;
+
+    try {
+      await loadReminders();
+      document.getElementById('reminders-root').innerHTML = renderRemindersHTML();
+      lastDay = today;
+    } catch (err) {
+      console.error('Reminder refresh failed, will retry', err);
+    }
+  }, 60 * 1000);
 }
 
 export function renderRemindersHTML() {

@@ -11,3 +11,11 @@ export function renderMiddleHTML(date) {
     <div class="larger-text">Today is <span class="weekday">${weekday}</span></div>
   `;
 }
+
+export function mountMiddle(root) {
+  function update() {
+    root.innerHTML = renderMiddleHTML(new Date());
+  }
+  update();
+  setInterval(update, 60 * 1000);
+}
